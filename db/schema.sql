@@ -13,3 +13,16 @@ CREATE TABLE music (
     is_favorite BOOLEAN,
     posting_date DATE NOT NULL DEFAULT CURRENT_DATE
 );
+ 
+DROP TABLE IF EXISTS reviews;
+
+CREATE TABLE reviews (
+ id SERIAL PRIMARY KEY,
+ reviewer_name TEXT,
+ reviewer_age INTEGER,
+ bio TEXT,
+ rating INTEGER,
+ CHECK (rating >= 0 AND rating <= 5),
+ music_id INTEGER REFERENCES music (id)
+ ON DELETE CASCADE
+);

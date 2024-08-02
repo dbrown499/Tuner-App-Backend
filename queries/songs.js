@@ -64,10 +64,22 @@ const deleteSong = async (id) => {
     }
 }
 
+// const getAscOrder = async () => {
+//     try {
+//         const allSongsInAscOrder = await db.any("SELECT * FROM music ORDER BY name ASC ");
+//         // console.log(allSongsInAscOrder)
+//         return allSongsInAscOrder;
+//     }catch(err){
+//         return err;
+//     }
+// }
+
+
 module.exports = {
     getAllSongs,
     getOneSong,
     addOneSong,
     updateSongInformation,
-    deleteSong
+    deleteSong,
+    // getAscOrder
 };
